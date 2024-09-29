@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide active">
+                <img src="image5.png" alt="image4">
+            </div>
+            <div class="slides">
+                <img src="image4.png" alt="image 5">
+            </div>
+            <div class="slides">
+                <img src="image6.png" alt="image 6">
+            </div>
+        </div>    
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+    </div>  
+    <script>
+        let currentSlide=0;
+        const slides=document.querySelectorAll('.slide');
+
+        function showSlide(index){
+            slides.forEach((slide, i) => {
+
+                slide.style.display = (i=== index) ? 'block' : 'none';
+            });
+        }
+        function moveSlide(direction){
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = Slide.length - 1;
+            if(currentSlide >= Slides.length) currentSlide = 0;
+            showSlide(currentSlide);
+        }
+         
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
